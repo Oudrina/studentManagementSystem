@@ -7,3 +7,6 @@ Student Git repositoy just created
 
 #Admin Portal
 <img width="1228" height="1411" alt="image" src="https://github.com/user-attachments/assets/b38d3320-a1bd-4c83-ac5c-4207a4f71f65" />
+Courses
+<img width="1325" height="670" alt="image" src="https://github.com/user-attachments/assets/97787218-a69c-4208-ae63-b416ddcf5985" />
+

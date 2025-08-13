@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+  <title>Signup page</title>
+  <style>
+
+    *{
+     margin: 0;
+     padding: 0;
+     text-decoration: none;
+     box-sizing: border-box;
+    }
+    body{
+     display: flex;
+     justify-content: center;
+     height: 100vh;
+    align-items: center;
+    background-color: #CCE5E0;
+    flex-direction: column;
+    }
+    form{
+     width: 400px;
+     padding: 1em;
+     background-color: #fff;
+     /* border: 1px solid gray; */
+     border-radius: 15px;
+     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+    }
+    form button{
+     width: 100%;
+     margin-bottom: .2em;
+     margin-top:1em;
+    }
+    form p{
+     text-align: center;
+    }
+
+      a{
+      color : blue;
+     }
+  </style>
+
+</head>
+<body>
+ <h3>Student SignUp Portal</h3>
+<form method="post" th:action="@{/student/registered}" th:object="${registration}">
+  <div class="mb-3">
+    <label  class="form-label"> Full Name</label>
+    <input type="text" class="form-control" name="studentName"  th:field="*{student.studentName}"  required >
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Email address</label>
+    <input type="email" class="form-control"  name="studentEmail" th:field="*{student.studentEmail}" required >
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Password</label>
+    <input type="password" class="form-control" name="studentEmail" th:field="*{student.studentPassword}"  required>
+  </div>
+  <div class="mb-3">
+    <label  class="form-label"> Confirm Password</label>
+    <input type="password" class="form-control" name="password" th:field="*{student.confirmPassword}"  required>
+  </div>
+  <div class="mb-3 form-check ">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1"> Remember me</label>
+  </div>
+
+  <label>Select Department</label>
+
+  <select th:field="*{student.department}" class="form-select" name="department">
+        <option value="" disabled selected>Select a department</option>
+    <option th:each="dept : ${department}"
+            th:value="${dept.id}"
+            th:text="${dept.departmentName}"
+            th:selected="${registration.student != null and registration.student.department != null and dept.id == registration.student.department.id}">
+
+    </option>
+  </select>
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+  <p> Already have an Account?<a th:href="@{/login}">Signin</a></p>
+</form>
+
+</body>
+</html>

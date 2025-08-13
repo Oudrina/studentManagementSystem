@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- admin/courselist.html -->
+<div th:fragment="content">
+  <h4>All Courses</h4>
+  <table class="table">
+    <thead><tr><th>Name</th><th>Code</th></tr></thead>
+    <tbody>
+    <tr th:each="course : ${courses}">
+      <td th:text="${course.courseName}"></td>
+      <td th:text="${course.courseCode}"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+</body>
+</html>

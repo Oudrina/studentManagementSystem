@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!-- admin/studentTable.html -->
+<div th:fragment="content">
+    <h3>Student List</h3>
+    <table class="table">
+        <thead>
+        <tr><th>ID</th><th>Name</th><th>Email</th><th>Department</th></tr>
+        </thead>
+        <tbody>
+        <tr th:each="student : ${students}">
+            <td th:text="${student.studentId}"></td>
+            <td th:text="${student.studentName}"></td>
+            <td th:text="${student.studentEmail}"></td>
+            <td th:text="${student.department.departmentName}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>

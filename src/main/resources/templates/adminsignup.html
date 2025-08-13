@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <title>Signu page</title>
+    <style>
+
+        *{
+         margin: 0;
+         padding: 0;
+         text-decoration: none;
+         box-sizing: border-box;
+        }
+        body{
+         display: flex;
+         justify-content: center;
+         height: 100vh;
+        align-items: center;
+        background-color: #CCE5E0;
+        }
+        form{
+         width: 300px;
+         padding: 1em;
+         background-color: #fff;
+         /* border: 1px solid gray; */
+         border-radius: 15px;
+         box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+        }
+        form button{
+         width: 100%;
+         margin-bottom: .2em;
+        }
+         form h4{
+          text-align: center;
+          font-size: 1.4rem;
+         }
+    </style>
+
+</head>
+<body>
+
+<form method="post" th:action="@{/admin/registered}" th:object="${admin}">
+    <h4>Admin  SignUp Portal</h4>
+    <div class="mb-3">
+        <label  class="form-label"> Name</label>
+        <input type="text" class="form-control" name="username"  >
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" name="email">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" name="password">
+    </div>
+
+    <div class="mb-3 form-check ">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1"> Remember me</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+    <p> Don't have an Account yet?<a th:href="@{/admin/login}">Sign in</a></p>
+</form>
+
+</body>
+</html>

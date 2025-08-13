@@ -14,11 +14,11 @@ import org.springframework.context.annotation.Bean;
 import java.util.List;
 
 @SpringBootApplication
-public class  StudentdbApplication {
+public class StudentdbApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(StudentdbApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(StudentdbApplication.class, args);
+    }
 
 }
 

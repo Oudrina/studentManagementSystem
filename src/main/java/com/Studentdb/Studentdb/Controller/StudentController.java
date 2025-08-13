@@ -33,38 +33,20 @@ public class StudentController {
     private CourseRepository courseRepository;
     @Autowired
     RegistrationRepository registrationRepository;
-    private  Registration registration;
+    private Registration registration;
 
 
     @GetMapping("/register")
-    public  String  Register(Model model , Student student){
+    public String Register(Model model, Student student) {
         Registration registration1 = new Registration();
         registration1.setStudent(new Student());
 //        student.setDepartment(new Department());
-            model.addAttribute("student",student);
-        model.addAttribute("department",departmentRepository.findAll());
-        model.addAttribute("registration",registration1);
+        model.addAttribute("student", student);
+        model.addAttribute("department", departmentRepository.findAll());
+        model.addAttribute("registration", registration1);
         return "signup";
     }
 
-
-//    @GetMapping("/create")
-//    public  String createStudent(Model model){
-//        Student student = new Student();
-//        student.setDepartment(new Department());
-//        model.addAttribute("student",student);
-//        model.addAttribute("department",departmentRepository.findAll());
-//        return "signup";
-//    }
-
-
-//    @PostMapping("/save")
-//    public  String createStudent( @ModelAttribute Student student , @RequestParam Long department ){
-//        Department dept = departmentRepository.findById(department).orElseThrow();
-//        student.setDepartment(dept);
-//        studentService.saveStudent(student);
-//        return "studentDashboard";
-//    }
 
     @PostMapping("/registered")
     public String createRegistration(@ModelAttribute Registration registration) {

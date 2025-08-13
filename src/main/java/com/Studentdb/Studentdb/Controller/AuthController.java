@@ -24,11 +24,11 @@ public class AuthController {
     private StudentRepository studentRepo;
     @Autowired
     private RegistrationRepository registrationRepository;
-  @Autowired
-     private CourseRepository courseRepository;
+    @Autowired
+    private CourseRepository courseRepository;
 
-     @Autowired
-     private StudentService studentService;
+    @Autowired
+    private StudentService studentService;
 
 
     @GetMapping("/login")
@@ -51,11 +51,8 @@ public class AuthController {
             if (student.getStudentPassword().equals(password)) {
                 List<Registration> registrations = registrationRepository.findByStudent(student);
 
-
                 model.addAttribute("student", student);
                 model.addAttribute("registrations", registrations);
-
-
 
                 return "studentDashboard";
             }
@@ -64,8 +61,6 @@ public class AuthController {
         model.addAttribute("error", "Invalid credentials");
         return "signIn"; // go back to login page on failure
     }
-
-
 
 
 }

@@ -12,11 +12,11 @@ import java.util.List;
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private  Long courseId;
+    private Long courseId;
 
-    private String  courseName;
-    private String  courseCode;
+    private String courseName;
+    private String courseCode;
 
-  @OneToMany(mappedBy = "course", cascade = CascadeType.ALL, orphanRemoval = true)
-  private List<Registration> registrations = new ArrayList<>();
+    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Registration> registrations = new ArrayList<>();
 }

@@ -9,7 +9,7 @@ import lombok.Data;
 public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private  Long Id;
-    private String  departmentName;
+    private Long Id;
+    private String departmentName;
     private String departmentCode;
 }

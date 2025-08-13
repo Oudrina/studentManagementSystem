@@ -11,12 +11,13 @@ import java.util.List;
 public class CourseService {
     @Autowired
     private CourseRepository courseRepository;
-    public List<Course>  allCourses(){
+
+    public List<Course> allCourses() {
         return courseRepository.findAll();
     }
 
-    public  Course saveCourse(Course course){
-        return  courseRepository.save(course);
+    public Course saveCourse(Course course) {
+        return courseRepository.save(course);
     }
 
 }

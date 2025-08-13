@@ -13,17 +13,17 @@ import java.util.List;
 public class StudentService {
     @Autowired
     public StudentRepository studentRepository;
-    public Student saveStudent(Student student ) {
+
+    public Student saveStudent(Student student) {
         return studentRepository.save(student);
     }
 
-    public List<Student> students (){
+    public List<Student> students() {
         return studentRepository.findAll();
     }
 
-
-    public  Student getStudentById(Long studentId){
-        return  studentRepository.findByStudentId(studentId).get();
+    public Student getStudentById(Long studentId) {
+        return studentRepository.findByStudentId(studentId).get();
     }
 
 

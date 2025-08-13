@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 
 
-    <title> Student  Dashboard</title>
+    <title> Student Dashboard</title>
     <style>
         *{
          margin: 0;
@@ -119,7 +120,6 @@
          width: 70%;
          margin: 0 auto;
          left: 5em;
-         /* border: 1px solid; */
         }
         .main-2{
          width: 80%;
@@ -247,7 +247,6 @@
           gap: 40px;
          }
          .course-1,.course-2 ,.course-3{
-          /* border: 1px solid; */
           padding: .5em;
           margin-bottom: .6em;
           box-shadow: 0px 0px 4px rgba(0,0,0,0.6);
@@ -358,7 +357,6 @@
         }
 
 
-
     </style>
 </head>
 <body>
@@ -379,7 +377,7 @@
 
         <i class='bx bxs-school colo-1'><span><a href="Http://">Students</a></span></i>
         <i class='bx bxs-spa colo-2'><span> <a href="http://">Courses</a></span></i>
-        <i class='bx bx-unite colo-3' ><span><a href="http://">Department</a></span></i>
+        <i class='bx bx-unite colo-3'><span><a href="http://">Department</a></span></i>
         <!-- <i class='bx bx-cookie colo-4'><span>Info</span></i> -->
         <i class='bx bxs-layer-minus colo-5'><span>Profile</span></i>
 
@@ -391,8 +389,8 @@
     <div class="main-box color-1">
         <div class="text">
             <!-- <i class='bx bxs-graduation color-1-1'></i> -->
-            <H5   th:text=" 'Hello , ' +  ${student.studentName} + '👋'"> </H5>
-            <p class="p1">Hope you  are ready to learning something new today</p>
+            <H5 th:text=" 'Hello , ' +  ${student.studentName} + '👋'"></H5>
+            <p class="p1">Hope you are ready to learning something new today</p>
             <a class="d1" th:text=" 'Department: ' +  ${student.department.departmentName}">Department:</a>
             <p>Level: 200</p>
         </div>
@@ -404,9 +402,6 @@
 
 
 </div>
-
-
-
 
 
 <div class="course-container">
@@ -423,26 +418,22 @@
 
         <th:block th:each="reg : ${registrations}">
 
-             <div class="course-div">
-                 <span th:text="${reg.course != null ? reg.course.courseCode : 'N/A'}"> Cssd</span>
-                 <span th:text="${reg.course != null ? reg.course.courseName : 'N/A'}"> Programmming</span>
-                 <span th:text="${reg.grade}">A</span>
-             </div>
+            <div class="course-div">
+                <span th:text="${reg.course != null ? reg.course.courseCode : 'N/A'}"> Cssd</span>
+                <span th:text="${reg.course != null ? reg.course.courseName : 'N/A'}"> Programmming</span>
+                <span th:text="${reg.grade}">A</span>
+            </div>
 
 
         </th:block>
 
 
-
         <div class="actions">
             <button class="pdf" onclick="exportToPDF()">Export as PDF</button>
-            <button  class="enail" onclick="emailMe()">Email Me</button>
+            <button class="enail" onclick="emailMe()">Email Me</button>
         </div>
     </div>
-    </div>
-
-
-
+</div>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>

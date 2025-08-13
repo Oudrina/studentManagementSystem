@@ -47,9 +47,9 @@
          background-color:blue;
          border-radius:6px;
         margin-left:3em;
-                margin-top:1em;
-                color:white;
-                font-weight:600;
+         margin-top:1em;
+          color:white;
+          font-weight:600;
 
         }
         p {
@@ -74,23 +74,16 @@
 <body>
 
 
-
-
-
-
-
-
-
 <div class="error-div" th:if="${error}" style="color:red" th:text="${error}"></div>
 
 <form th:action="@{/logged}" method="post">
     <h2> Student Login Portal</h2>
 
     <label>StudentId :
-        <input type="text" name="studentId" required />
+        <input type="text" name="studentId" required/>
     </label><br/>
     <label>Password:
-        <input type="password" name="password" required />
+        <input type="password" name="password" required/>
     </label><br/>
     <button type="submit">Login</button>
 

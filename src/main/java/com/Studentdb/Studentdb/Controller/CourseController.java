@@ -15,17 +15,18 @@ public class CourseController {
 
     @Autowired
     private CourseService courseService;
+
     @GetMapping("/createCourse")
-    public  String  createCourse(Model model ){
+    public String createCourse(Model model) {
         Course course = new Course();
-        model.addAttribute("course",course);
+        model.addAttribute("course", course);
         return "createcourse";
     }
 
 
     @PostMapping("/saveCourse")
-    public  String saveCourse(Model model , @ModelAttribute("course") Course course){
-        model.addAttribute("course",course);
+    public String saveCourse(Model model, @ModelAttribute("course") Course course) {
+        model.addAttribute("course", course);
         courseService.saveCourse(course);
         return "admin";
     }

@@ -13,21 +13,19 @@ import java.util.List;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private  Long studentId;
+    private Long studentId;
     private String studentName;
-    private String  studentEmail;
-    private  String studentPassword;
-    private  String confirmPassword;
-
+    private String studentEmail;
+    private String studentPassword;
+    private String confirmPassword;
 
     @ManyToOne
     @JoinColumn(name =
-    "departmentId")
-    private  Department department;
+            "departmentId")
+    private Department department;
 
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Registration> registrations = new ArrayList<>();
-    // getters + setters
 
 
 }

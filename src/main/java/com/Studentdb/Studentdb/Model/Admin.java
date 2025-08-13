@@ -11,11 +11,11 @@ import lombok.Data;
 @Table
 public class Admin {
     @Id
-    private  Long adminId;
+    private Long adminId;
     private String adminName;
-    private String  adminEmail;
-    private  String password;
+    private String adminEmail;
+    private String password;
 
     @ManyToOne
-    private  Department department;
+    private Department department;
 }

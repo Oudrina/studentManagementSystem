@@ -2,13 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Select a Course</title>
-    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
 </head>
 <body class="container mt-5">
 <h2>Select a Course to Register</h2>
 
 <form th:action="@{/student/register-course}" method="post">
-    <input type="hidden" name="studentId" th:value="${studentId}" />
+    <input type="hidden" name="studentId" th:value="${studentId}"/>
 
     <div class="mb-3">
         <label for="course" class="form-label">Choose Course</label>
@@ -16,7 +16,8 @@
             <option value="" disabled selected>Select a course</option>
             <option th:each="course : ${courses}"
                     th:value="${course.courseId}"
-                    th:text="${course.courseName}">Course Name</option>
+                    th:text="${course.courseName}">Course Name
+            </option>
         </select>
     </div>
 

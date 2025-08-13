@@ -6,16 +6,21 @@
 </head>
 <body>
 <div th:fragment="content">
-<h4>All Courses</h4>
-<table class="table">
-  <thead><tr><th>Name</th><th>Code</th></tr></thead>
-  <tbody>
-  <tr th:each="department : ${departments}">
-    <td th:text="${department.departmentName}"></td>
-    <td th:text="${department.departmentCode}"></td>
-  </tr>
-  </tbody>
-</table>
+    <h4>All Courses</h4>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Code</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="department : ${departments}">
+            <td th:text="${department.departmentName}"></td>
+            <td th:text="${department.departmentCode}"></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>

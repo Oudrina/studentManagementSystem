@@ -1,307 +1,294 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 
 
-  <title> Admin Dashboard</title>
-  <style>
-    *{
-     margin: 0;
-     text-decoration: none;
-     cursor: pointer;
-    }
+    <title> Admin Dashboard</title>
+    <style>
+        *{
+         margin: 0;
+         text-decoration: none;
+         cursor: pointer;
+        }
 
-    .sidebar{
-     width: 13% ;
-     height: 100%;
-     position: fixed;
-     background-color: #0A1172;
-     top: 0;
-     padding: 1em;
-     display: block;
+        .sidebar{
+         width: 13% ;
+         height: 100%;
+         position: fixed;
+         background-color: #0A1172;
+         top: 0;
+         padding: 1em;
+         display: block;
 
-    }
+        }
 
-    .icons-bar{
-     display: flex;
-     flex-direction: column;
-     margin-top: 3em;
-     justify-content: center;
-     align-items: center;
-     align-content: center;
-     gap: 30px;
-    }
-     .icons-bar i{
-      font-size: 1.3rem;
-     }
-     .colo-1{
-   color: #FF6F61;
-     }
+        .icons-bar{
+         display: flex;
+         flex-direction: column;
+         margin-top: 3em;
+         justify-content: center;
+         align-items: center;
+         align-content: center;
+         gap: 30px;
+        }
+         .icons-bar i{
+          font-size: 1.3rem;
+         }
+         .colo-1{
+       color: #FF6F61;
+         }
 
-     .colo-2{
-      color:#E6E6FA;
-     }
-     .colo-3{
-      color: #40E0D0;
-     }
-     .colo-4{
-      color: #FFC0CB;
-     }
-     .colo-5{
-      color: #f5f5dc;
-     }
-     .colo-1{
+         .colo-2{
+          color:#E6E6FA;
+         }
+         .colo-3{
+          color: #40E0D0;
+         }
+         .colo-4{
+          color: #FFC0CB;
+         }
+         .colo-5{
+          color: #f5f5dc;
+         }
+         .colo-1{
 
-     }
+         }
 
-    .icons-bar i span{
-     font-size: .788rem;
-     font-weight: 200;
-     font-family:Verdana, Geneva, Tahoma, sans-serif;
-     color: white;
-     background-color: none;
-    }
-    .icons-bar i span a{
-     text-decoration:none;
-     color:white;
-    }
-
-
-    .admin h3{
-
-      text-align: center;
-      font-size: 2rem;
-      color: #202020;
-      font-weight:800;
-           color: #50C878
-
-    }
+        .icons-bar i span{
+         font-size: .788rem;
+         font-weight: 200;
+         font-family:Verdana, Geneva, Tahoma, sans-serif;
+         color: white;
+         background-color: none;
+        }
+        .icons-bar i span a{
+         text-decoration:none;
+         color:white;
+        }
 
 
-    .nav-head{
-     width: 98%;
-     /* background-color: #0A1172; */
-     /* position: sticky; */
-     padding: 1em;
-     margin: 0 auto;
-     display: flex;
-     justify-content: flex-end;
-    align-content: center;
-    align-items: center;
-    margin-left: 2em;
-    }
+        .admin h3{
 
-      .nav-head .link1 , .link2{
-text-decoration: none;
-color: #202020;
-background-color: #0A1172;
-padding: .5em;
-margin-right: 1em;
-border-radius: 5px;
+          text-align: center;
+          font-size: 2rem;
+          color: #202020;
+          font-weight:800;
+               color: #50C878
 
-}
+        }
 
-.nav-head .link1{
-background-color: #506C87;
-color: white;
-}
-.nav-head .link2{
-background-color:#5D3FD3;
-color: white;
-margin-right: 4em;
-}
 
-    .header-icons{
-     display: flex ;
-     gap: 40px;
-     margin-right: 2em;
-     justify-content: center;
-     align-content: center;
-     align-items: center;
-    }
-    .header-icons i{
-     font-size: 1rem;
-    }
-    .header-icons .Logout{
-     background-color: #ADD8E6;
-     padding: .5em;
-     border-radius: 10px;
-    }
-    .main-1{
-     display: flex;
-     justify-content: space-between;
-    align-content: center;
-    align-items: center;
-     position: relative;
-     width: 85%;
-     margin: 0 auto;
-     left: 5em;
-     gap: 20px;
-    }
-    .main-2{
-     width: 80%;
-     margin: 0 auto;
-     display: block;
-     margin-top: 3em;
-     margin-right: 3em;
-    }
+        .nav-head{
+         width: 98%;
+         padding: 1em;
+         margin: 0 auto;
+         display: flex;
+         justify-content: flex-end;
+        align-content: center;
+        align-items: center;
+        margin-left: 2em;
+        }
 
-    .main-2 h4{
-     font-size: 1.5rem;
-     font-weight: 200;
-     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
-
-     .student-table{
-      /* border: 1px solid; */
-      border-radius: 9px;
-     }
-
-      .main-box{
-      background-color: coral;
-      width: 30%;
-      padding: 1em;
-      margin-top: 2em;
-       border-radius: 5px;
-       display: block;
-
-    }
-     .main-box i{
-      font-size: 3rem;
-      color: antiquewhite;
-     }
-
-     .main-box h4{
-      font-size: 1.3rem;
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      font-weight: 200;
-     }
-     .main-box a{
-      color: #333;
-      font-size: 2rem;
-     }
-
-     .color-1{
-      background-color: #dBF5F6;
-     }
-     .color-2{
-      background-color: #E6E6FA;
-     }
-     .color-3{
-      background-color: #90EE90;
-     }
-     .main-1 .color-1-1{
-      background-color: #506C87;
-      padding: .1em;
-      border-radius: 8px;
-      color: white;
-     }
-     .main-1 .color-2-2{
-      background-color: #5D3FD3;
-      padding: .1em;
-      border-radius: 8px;
-      color: white;
-     }
-     .main-1 .color-3-3{
-      background-color: #006400;
-       padding: .1em;
-      border-radius: 8px;
-      color: white;
-     }
-
-.span-div{
-margin-top:2em;
- box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
- width:60%;
- display:flex;
- justify-content:space-around;
- border-radius:6px;
- padding:.5em;
- margin:0 auto;
+          .nav-head .link1 , .link2{
+    text-decoration: none;
+    color: #202020;
+    background-color: #0A1172;
+    padding: .5em;
+    margin-right: 1em;
+    border-radius: 5px;
 
     }
 
-  </style>
+    .nav-head .link1{
+    background-color: #506C87;
+    color: white;
+    }
+    .nav-head .link2{
+    background-color:#5D3FD3;
+    color: white;
+    margin-right: 4em;
+    }
+
+        .header-icons{
+         display: flex ;
+         gap: 40px;
+         margin-right: 2em;
+         justify-content: center;
+         align-content: center;
+         align-items: center;
+        }
+        .header-icons i{
+         font-size: 1rem;
+        }
+        .header-icons .Logout{
+         background-color: #ADD8E6;
+         padding: .5em;
+         border-radius: 10px;
+        }
+        .main-1{
+         display: flex;
+         justify-content: space-between;
+        align-content: center;
+        align-items: center;
+         position: relative;
+         width: 85%;
+         margin: 0 auto;
+         left: 5em;
+         gap: 20px;
+        }
+        .main-2{
+         width: 80%;
+         margin: 0 auto;
+         display: block;
+         margin-top: 3em;
+         margin-right: 3em;
+        }
+
+        .main-2 h4{
+         font-size: 1.5rem;
+         font-weight: 200;
+         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+         .student-table{
+          border-radius: 9px;
+         }
+
+          .main-box{
+          background-color: coral;
+          width: 30%;
+          padding: 1em;
+          margin-top: 2em;
+           border-radius: 5px;
+           display: block;
+
+        }
+         .main-box i{
+          font-size: 3rem;
+          color: antiquewhite;
+         }
+
+         .main-box h4{
+          font-size: 1.3rem;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          font-weight: 200;
+         }
+         .main-box a{
+          color: #333;
+          font-size: 2rem;
+         }
+
+         .color-1{
+          background-color: #dBF5F6;
+         }
+         .color-2{
+          background-color: #E6E6FA;
+         }
+         .color-3{
+          background-color: #90EE90;
+         }
+         .main-1 .color-1-1{
+          background-color: #506C87;
+          padding: .1em;
+          border-radius: 8px;
+          color: white;
+         }
+         .main-1 .color-2-2{
+          background-color: #5D3FD3;
+          padding: .1em;
+          border-radius: 8px;
+          color: white;
+         }
+         .main-1 .color-3-3{
+          background-color: #006400;
+           padding: .1em;
+          border-radius: 8px;
+          color: white;
+         }
+
+    .span-div{
+    margin-top:2em;
+     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+     width:60%;
+     display:flex;
+     justify-content:space-around;
+     border-radius:6px;
+     padding:.5em;
+     margin:0 auto;
+
+        }
+
+    </style>
 </head>
 <body>
 <header class="nav-head">
 
-  <a th:href="@{/admin/createCourse}" class="link1">  Add Course</a>
+    <a th:href="@{/admin/createCourse}" class="link1"> Add Course</a>
 
-  <a th:href="@{/admin/createDepartment}" class="link2"> Add Department</a>
-  <div class="header-icons">
-    <i class='bx bxs-graduation'><span> <a th:href="@{/login}">Student Dashboard</a>
+    <a th:href="@{/admin/createDepartment}" class="link2"> Add Department</a>
+    <div class="header-icons">
+        <i class='bx bxs-graduation'><span> <a th:href="@{/login}">Student Dashboard</a>
             </span></i>
-    <i class='bx bx-log-out-circle Logout'> <span> <a th:href="@{/admin/login}">Logout</a></span></i>
-  </div>
+        <i class='bx bx-log-out-circle Logout'> <span> <a th:href="@{/admin/login}">Logout</a></span></i>
+    </div>
 </header>
 
 <div class="sidebar">
-  <div class="admin">
-    <H3>Admin</H3>
-  </div>
+    <div class="admin">
+        <H3>Admin</H3>
+    </div>
 
-  <div class="icons-bar">
+    <div class="icons-bar">
 
 
-    <i class='bx bxs-school colo-1'><span><a th:href="@{/admin/dashboard(view='students')}">Students</a></span></i>
-    <i class='bx bxs-spa colo-2'><span> <a th:href="@{/admin/dashboard(view='courses')}">Courses</a></span></i>
-    <i class='bx bx-unite colo-3' ><span><a th:href="@{/admin/dashboard(view='departments')}">Department</a></span></i>
-    <!-- <i class='bx bx-cookie colo-4'><span>Info</span></i> -->
-    <i class='bx bxs-layer-minus colo-5'><span>Profile</span></i>
+        <i class='bx bxs-school colo-1'><span><a th:href="@{/admin/dashboard(view='students')}">Students</a></span></i>
+        <i class='bx bxs-spa colo-2'><span> <a th:href="@{/admin/dashboard(view='courses')}">Courses</a></span></i>
+        <i class='bx bx-unite colo-3'><span><a
+                th:href="@{/admin/dashboard(view='departments')}">Department</a></span></i>
+        <!-- <i class='bx bx-cookie colo-4'><span>Info</span></i> -->
+        <i class='bx bxs-layer-minus colo-5'><span>Profile</span></i>
 
-  </div>
+    </div>
 </div>
 
 <!-- dashbord -->
 <div class="main-1">
-  <div class="main-box color-1">
-    <i class='bx bxs-graduation color-1-1'></i>
-    <H4>Students</H4>
-    <a href="#" th:text="${totalStudent}">0</a>
-  </div>
-  <div class="main-box color-2">
+    <div class="main-box color-1">
+        <i class='bx bxs-graduation color-1-1'></i>
+        <H4>Students</H4>
+        <a href="#" th:text="${totalStudent}">0</a>
+    </div>
+    <div class="main-box color-2">
 
-    <i class='bx bxl-slack  color-2-2'></i>
-    <H4>Courses</H4>
-    <a href="#" th:text="${totalCourse}">0</a>
-  </div>
-  <div class="main-box color-3">
-    <i class='bx bxl-joomla color-3-3'></i>
-    <H4>Department</H4>
-    <a href="#" th:text="${totalDepartment}">0</a>
-  </div>
+        <i class='bx bxl-slack  color-2-2'></i>
+        <H4>Courses</H4>
+        <a href="#" th:text="${totalCourse}">0</a>
+    </div>
+    <div class="main-box color-3">
+        <i class='bx bxl-joomla color-3-3'></i>
+        <H4>Department</H4>
+        <a href="#" th:text="${totalDepartment}">0</a>
+    </div>
 </div>
 
 
-
-
 </div>
-<!-- Students table -->
 
 <div class="main-2">
 
-
-
-  <!-- Main Content Area -->
-  <main class="p-5 flex-grow-1">
-    <div th:if="${view == 'students'}" th:insert="studentlist :: content"></div>
-    <div th:if="${view == 'courses'}" th:insert="courselist :: content"></div>
-    <div th:if="${view == 'departments'}" th:insert="departmentlist :: content"></div>
-  </main>
-
-
+    <!-- Main Content Area -->
+    <main class="p-5 flex-grow-1">
+        <div th:if="${view == 'students'}" th:insert="studentlist :: content"></div>
+        <div th:if="${view == 'courses'}" th:insert="courselist :: content"></div>
+        <div th:if="${view == 'departments'}" th:insert="departmentlist :: content"></div>
+    </main>
 
 </div>
-
-
-
-
-
 
 </body>
 </html>

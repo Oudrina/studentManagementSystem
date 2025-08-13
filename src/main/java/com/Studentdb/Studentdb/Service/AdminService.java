@@ -9,9 +9,9 @@ public class AdminService {
 
     private AdminRepository adminRepository;
 
-    public  Admin  saveAdmin(Admin admin){
-         return   adminRepository.save(admin);
+    public Admin saveAdmin(Admin admin) {
+        return adminRepository.save(admin);
 
-    };
+    }
 
 }

@@ -21,7 +21,6 @@ public class RegistrationService {
     @Autowired
     private CourseRepository courseRepository;
 
-
     public void studentCourse(Long studentId, List<Long> courseIds) {
         Student student = studentRepository.findById(studentId).orElseThrow();
 
@@ -36,11 +35,9 @@ public class RegistrationService {
         }
     }
 
-
-    public Registration saveStudent(Registration registration){
-        return   registrationRepository.save(registration);
+    public Registration saveStudent(Registration registration) {
+        return registrationRepository.save(registration);
     }
-
 
     public void save(Registration registration) {
 
